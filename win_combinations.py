@@ -7,7 +7,7 @@ class Win_comb():
         self.comb1 = [1,10, 11, 12, 13]
         self.comb2 =  [1, 1, 1, 1]
         self.comb3 = [1, 1, 1, 13, 13]
-        self.comb_settings = Settings()
+        #self.comb_settings = Settings()
     def check_comb(self, array, diag = 0):
         list_4 = [item for item, count in collections.Counter(array).items() if count == 4]
         list_3 = [item for item, count in collections.Counter(array).items() if count == 3]

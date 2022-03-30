@@ -11,8 +11,7 @@ class Random:
         self.root = root
         self.text = tk.StringVar()
         self.text.set(self.number)
-        self.label = tk.Label(self.root, textvariable=self.text, height=g_settings.random_label_h,
-                              width=g_settings.random_label_w).place(x=g_settings.random_label_x, y=g_settings.random_label_y)
+        self.g_settings = g_settings
         #self.label.config(height = 3, width=5)
         #self.label.pack()
     def get_random_number(self):
@@ -30,3 +29,9 @@ class Random:
         self.dict = {}
         for i in range(1, 14):
             self.dict[i] = 0
+
+    def show_random_label(self):
+        self.label = tk.Label(self.root, textvariable=self.text, height=self.g_settings.random_label_h,
+                              width=self.g_settings.random_label_w)
+
+        self.label.place(x=self.g_settings.random_label_x, y=self.g_settings.random_label_y)
